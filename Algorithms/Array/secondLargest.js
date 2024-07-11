@@ -16,7 +16,7 @@ function secondLarge(arr){
     console.log(p);
     console.log(vp);
 
-}//////////comment aadded
+}
 
 let arr = [89,46,678,89,90]
 
