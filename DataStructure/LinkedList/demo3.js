@@ -101,6 +101,99 @@ class LinkedList{
         }
         this.size++
     }
+
+
+    removeFrom(index){
+
+        if(index < 0 || index >= this.size){
+            return null ;
+        }
+        let removeElement ;
+        if(index === 0){
+            removeElement = this.head ;
+            this.head = this.head.next ;
+        }else{
+
+            let curr = this.head ;
+
+            for(let i=0;i< index -1;i++){
+                curr = curr.next ;
+            }
+
+            removeElement = curr.next ;
+            curr.next = removeElement.next ;
+
+
+        }
+        this.size--
+        return removeElement.value ;
+       
+    }
+
+    removeValue(value){
+
+        if(this.isEmpty()){
+            return null;
+        }
+        
+        if(this.head.value === value ){
+        
+            this.head = this.head.next ;
+            this.size-- ;
+            return value ;
+        }
+        else{
+            let removeElement;
+
+            let curr = this.head ;
+
+            while(curr.next && curr.next.value !== value){
+                curr = curr.next ;
+            }
+
+            if(curr.next){
+                removeElement = curr.next ;
+                curr.next = removeElement.next ;
+                this.size--
+                return value ;
+
+            }
+            return null ;
+
+        }
+    }
+
+
+    search(value){
+
+        if(this.isEmpty()){
+            return -1 ;
+        }
+
+        let i=0;
+        let curr = this.head ;
+
+        while(curr){
+            if(curr.value === value){
+                return i ;
+            }
+            curr = curr.next ;
+            i++ ;
+        }
+        return -1 ;
+    }
+
+    reverse(){
+        let prev = null ;
+        let curr = this.head ;
+        while(curr){
+            let next = curr.next ;
+
+            curr.next = prev ;
+            prev = curr ;
+            curr = next ;
+        }
+    }
 }
 
 
@@ -120,7 +213,17 @@ list.append(50)
 
 list.insert(45,4)
 
+
+
 list.print()
+
+
+
+
+
+console.log(list.search(0))
+
+
 
 
 console.log(list.getSize());
