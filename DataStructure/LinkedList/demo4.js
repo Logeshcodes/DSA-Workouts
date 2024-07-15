@@ -8,6 +8,7 @@ class Node{
 class LinkedList{
     constructor(){
         this.head = null ;
+        
         this.size = 0 ;
     }
 
@@ -70,6 +71,9 @@ class LinkedList{
         this.size++ ;
     }
 
+
+
+    
     insert(value , index){
 
         if(index < 0 || index > this.size){
@@ -177,6 +181,41 @@ class LinkedList{
 
     }
 
+    reverse(){
+
+       let prev = null ;
+       let curr = this.head ;
+
+       while(curr){
+            let next = curr.next ;
+            curr.next = prev ;
+            prev = curr ;
+            curr = next ;
+       }
+       this.head = prev ;
+    }
+
+    midElement(){
+
+        if(this.isEmpty()){
+            return -1 ;
+        }
+        else{
+
+            let size = this.size ;
+            let mid = Math.floor(size/2)
+
+            let curr = this.head ;
+            
+            for(let i=0;i<mid ; i++){
+                curr = curr.next ;
+            }
+            return curr.value ;
+        }
+    }
+
+
+
     
 }
 
@@ -191,9 +230,9 @@ list.prepend(30)
 list.prepend(20)
 list.prepend(10)
 
-list.append(40)
-list.append(50)
+
 list.append(60)
+list.append(70)
 
 list.insert(35,3)
 
@@ -203,6 +242,13 @@ console.log(list.removeValue(39));
 
 list.print()
 
-console.log(list.search(50))
+list.reverse()
+
+console.log(list.midElement())
+
+
+list.print()
+
+
 
 console.log(list.getSize())
