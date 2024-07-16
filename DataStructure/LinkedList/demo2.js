@@ -34,24 +34,7 @@ class LinkedList{
         this.size++ ;
     }
 
-    append(value){
-
-        let node = new Node(value);
-
-        if(this.isEmpty()){
-            this.head = node ;
-        }else{
-            let curr = this.head ;
-
-            while(curr.next){
-                curr = curr.next ;
-            }
-            curr.next = node ;
-        }
-        this.size++;
-    }
-
-
+  
     print(){
 
         if (this.isEmpty()) {
@@ -83,7 +66,6 @@ list.prepend(30)
 list.prepend(20)
 list.prepend(10)
 
-list.append(40)
 
 list.print()
 

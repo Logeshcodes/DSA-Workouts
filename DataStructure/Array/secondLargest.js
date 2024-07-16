@@ -13,10 +13,11 @@ function secondLarge(arr){
         }
     }
 
-    console.log(p);
-    console.log(vp);
+    console.log("first Large : ",p);
+    console.log("second large : " , vp);
 
 }
+
 
 let arr = [89,46,678,89,90]
 

@@ -62,9 +62,7 @@ class LinkedList{
         if(this.isEmpty()){
             this.head = node ;
         }else{
-
             let curr = this.head ;
-
             while(curr.next){
                 curr = curr.next ;
             }
@@ -73,7 +71,6 @@ class LinkedList{
         }
 
         this.size++ ;
-
     }
 
     insert(value , index ){

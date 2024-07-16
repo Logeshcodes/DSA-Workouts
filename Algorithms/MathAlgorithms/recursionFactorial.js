@@ -1,6 +1,6 @@
 function recursionFactorial(n){
 
-    if(n==0 | n==1) return 1;
+    if(n==0 || n==1) return 1;
 
     return n * recursionFactorial(n-1)
 
@@ -8,4 +8,4 @@ function recursionFactorial(n){
 }
 
 
-console.log(recursionFactorial(4))
+console.log(recursionFactorial(5))

@@ -22,4 +22,4 @@ let target = 4
 
 let res = binarySearch(arr , target )
 
-console.log(res)
+console.log("Index of the target element : ",res)
