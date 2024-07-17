@@ -176,6 +176,7 @@ class LinkedList{
                 curr = curr.next ;
                 i++ ;
             }
+            return -1;
         }
 
 
@@ -210,13 +211,43 @@ class LinkedList{
             for(let i=0;i<mid ; i++){
                 curr = curr.next ;
             }
-            return curr.value ;
+            return this.removeValue(curr.value) ;
         }
     }
 
 
+    linkedListToArray(){
+
+        let arr = [];
+    
+        let curr = this.head ;
+    
+    
+        while(curr){
+            arr.push(curr.value);
+            curr = curr.next ;
+        }
+    
+        return arr ;
+    
+    }
+    
+    
+
+
 
     
+}
+
+function arrayToLinkedList(arr){
+
+    const Linkedlist = new LinkedList()
+
+        for(let i=0;i<arr.length ;i++){
+            Linkedlist.append(arr[i])
+        }
+
+        return Linkedlist ;
 }
 
 
@@ -227,10 +258,12 @@ console.log(list.getSize())
 console.log(list.isEmpty())
 
 list.prepend(30)
+list.prepend(40)
 list.prepend(20)
 list.prepend(10)
 
 
+list.append(60)
 list.append(60)
 list.append(70)
 
@@ -244,11 +277,24 @@ list.print()
 
 list.reverse()
 
-console.log(list.midElement())
+console.log("m : ",list.midElement())
+
 
 
 list.print()
 
+
+let arr = [1,2,3,4,5]
+
+
+let list2 = arrayToLinkedList(arr);
+
+list2.print()
+
+
+let arr2 = list.linkedListToArray()
+
+console.log(arr2);
 
 
 console.log(list.getSize())
