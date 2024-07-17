@@ -1,0 +1,66 @@
+Data Structure : 
+
+            Way of organizing and store a data so that it can be accessed and modified efficiently .
+
+
+                              Types of Data Structure : 
+                              
+                              1 ) Bulit-in Data Structure  : Array , object , Set , map 
+                              2 ) Custom Data Structure : LinkedList , Stack , Queue , HashTable , Tree , Graphs .
+
+
+Algorithms : 
+
+            Set of well-defined instructions to slove the particular problem effectively and efficiently .
+
+                              Algorithm analysis : 
+                  
+                              1 ) Time Complexity    : Amount of time taken to excute the code .
+                              2 ) Space Complexity  : Amount of soace taken to excute the code .
+
+
+Asymptotic Notation : 
+
+            Mathematical tools for represents the time and space complexity .
+
+                              1 ) Big- O notation  (O) :  worst-case complexity 
+                              2 ) Omega notation ( )   : Best-case complexity 
+                              3 ) Theta notation ( )     : Average-case complexity 
+            Examples : 
+
+                    1 ) Constant Time – O(1)
+                    2 ) Linear Time – O(n) 
+                    3 ) Quadratic Time – O(n^2)
+                    4 ) Logarithmic Time – O(log n)
+
+
+Memory Allocation : 
+
+            It a process of reserving a memory space for a variable, object or function in program .
+
+            key concept : 
+                   
+                   1) Heap memory : This is where objects, arrays and functions are stored .
+                   2) stack memory : This is where primitive datatypes like number , string , boolean are stored .
+
+            Memory Management :
+
+                   Js engine use garbage collector for manage memory .if there is an unreferenced elements here in a code that would be deallocated by garbage collector .
+
+
+Memory Leak : 
+
+            A memory leak occurs when the program doesn't release a memory , that is no longer needed .
+
+            I would causing the program to consume more and more memory over time .
+
+            This can be lead a perfromance degradation and eventually cause the program to be crashed .
+
+
+
+    Common Causes for memory leak :
+
+    1 ) Global variable 
+    2 ) Event Listener 
+    3 ) Closures
+    4 ) DOM references 
