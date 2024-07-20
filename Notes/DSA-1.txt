@@ -16,7 +16,7 @@ Algorithms :
                               Algorithm analysis : 
                   
                               1 ) Time Complexity    : Amount of time taken to excute the code .
-                              2 ) Space Complexity  : Amount of soace taken to excute the code .
+                              2 ) Space Complexity  : Amount of space taken to excute the code .
 
 
 Asymptotic Notation : 
