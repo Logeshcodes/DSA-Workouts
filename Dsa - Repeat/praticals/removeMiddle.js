@@ -83,6 +83,25 @@ class Linkedlist{
         return this.removeValue(curr.value);
     }
 
+    search(value){
+
+        if(this.isEmpty()){
+            return -1 ;
+        }else{
+            let i=0;
+            let curr = this.head ;
+    
+            while(curr){
+                if(curr.value === value){
+                    return i;
+                }
+                i++ ;
+                curr =curr.next ;
+            }
+            return -1;
+        }
+    }
+
 
     removeValue(value){
 
@@ -125,7 +144,11 @@ list.prepend(10)
 list.append(60)
 list.append(70)
 
+
+
 list.midElement()
+
+console.log(list.search(70));
 
 list.print()
 

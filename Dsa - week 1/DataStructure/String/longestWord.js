@@ -1,15 +1,16 @@
-function longestWord(str){
+function longest(str){
 
-    let arr = str.split(' ');
+    let arr = str.split(" ");
 
-    let long = 0 ;
+    let long = 0;
 
-    let word ;
+    let word = '' ;
 
-    for(let i=0;i<arr.length;i++){
+    for(let i=0;i< arr.length ;i++){
         if(arr[i].length > long){
+
             long = arr[i].length;
-            word = arr[i];
+            word = arr[i]
         }
     }
 
@@ -17,8 +18,8 @@ function longestWord(str){
 }
 
 
-let str = "This is an Apple";
+let str = "this is an Apple tree";
 
-let res = longestWord(str)
+let res = longest(str)
 
 console.log(res)

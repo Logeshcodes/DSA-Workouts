@@ -1,23 +1,19 @@
-let arr = [4, 2, 8, -1, 9, 3];
+let arr = [4, 2, 8, 1,3,5];
 
 function bubbleSort(arr) {
     let n = arr.length;
-    for (let i = 0; i < n - 1; i++) {
-        for (let j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
+    for (let i = 0; i < n ; i++) {
+        for (let j = i+1; j < n ; j++) {
+            if (arr[j] < arr[i]) {
                 let temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+                arr[j] = arr[i];
+                arr[i] = temp;
             }
         }
     }
     return arr;
 }
 
-function insertionSort(arr){
-    for(let i = 1 ; i < arr.length ; i++ ){
-        
-    }
-}
+
 
 console.log(bubbleSort(arr));

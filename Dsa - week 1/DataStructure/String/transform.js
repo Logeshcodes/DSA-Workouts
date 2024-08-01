@@ -2,7 +2,7 @@ function transform(str,count){
 
     let res = '';
 
-    for(let i=0;i<=str.length-1;i++){
+    for(let i=0;i< str.length;i++){
 
         let value = str.charCodeAt(i);
         value += count ; 

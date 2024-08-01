@@ -1,13 +1,15 @@
-let str = "malayalam";
+let str = 'logeshh';
 
-let obj = {} ;
+let obj = {};
 
-for(let i=0;i<str.length;i++){
+for(let i=0 ;i< str.length ;i++){
+
     if(!obj[str[i]]){
-        obj[str[i]] = 1;
+        obj[str[i]] = 1 ;
     }else{
         obj[str[i]]++ ;
     }
 }
 
-console.log(obj)
+
+console.log(obj);
