@@ -1,5 +1,8 @@
 function selectionSort(arr){
 
+
+    // selection Sort
+
     for(let i=0 ;i<arr.length ;i++){
         for(let j=i+1 ; j< arr.length ; j++){
 
@@ -8,6 +11,7 @@ function selectionSort(arr){
                 arr[i] = arr[j] ;
                 arr[j] = temp ;
             }
+            
         }
     }
 
