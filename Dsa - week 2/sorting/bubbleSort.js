@@ -3,13 +3,14 @@ function bubbleSort(arr){
     let swapped 
 
     do {
+
         swapped = false ;
 
-        for(let i=0;i< arr.length-1 ;i++){
-            if(arr[i] > arr[i+1]){
-                let temp = arr[i];
+        for(let i=0;i< arr.length-1;i++){
+            if(arr[i]> arr[i+1]){
+                let temp = arr[i] ;
                 arr[i] = arr[i+1];
-                arr[i+1] = temp ;
+                arr[i+1 ] = temp ;
 
                 swapped = true ;
             }
@@ -21,8 +22,8 @@ function bubbleSort(arr){
 }
 
 
-let arr = [56,89,34,55,90 , 1] ;
+const arr = [-6 , -10 , 6 , 90 , 67 ]
 
-let res = bubbleSort(arr);
+let res = bubbleSort(arr)
 
 console.log(res);
