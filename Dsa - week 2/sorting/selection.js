@@ -4,16 +4,16 @@ function selectionSort(arr){
 
         let minIndex = i ;
 
-        for(let j=i+1;j< arr.length;j++){
-
+        for(let j=i+1;j< arr.length ;j++){
             if(arr[j] < arr[minIndex]){
                 minIndex = j ;
             }
         }
 
+
         if(minIndex !== i){
             let temp = arr[i];
-            arr[i] = arr[minIndex]
+            arr[i]= arr[minIndex];
             arr[minIndex] = temp ;
         }
     }
@@ -21,9 +21,6 @@ function selectionSort(arr){
     return arr ;
 }
 
+let arr = [5,0,10,-5,-2]
 
-let arr = [56,89,34,55,90]
-
-let res = selectionSort(arr);
-
-console.log(res);
+console.log(selectionSort(arr));
