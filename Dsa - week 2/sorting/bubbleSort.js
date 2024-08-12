@@ -3,26 +3,23 @@ function bubbleSort(arr){
     let swapped 
 
     do {
-
-        swapped = false ;
-
-        for(let i=0;i< arr.length-1;i++){
-            if(arr[i]> arr[i+1]){
-                let temp = arr[i] ;
+        swapped = false;
+        for(let i=0;i<arr.length;i++){
+            if(arr[i] > arr[i+1]){
+                let temp = arr[i];
                 arr[i] = arr[i+1];
-                arr[i+1 ] = temp ;
+                arr[i+1] = temp ;
 
-                swapped = true ;
+                swapped = true
             }
         }
-        
-    } while (swapped);
+    } while (swapped)
 
     return arr ;
 }
 
 
-const arr = [-6 , -10 , 6 , 90 , 67 ]
+let arr = [-9 , -10 , 0 , 5, 2,6];
 
 let res = bubbleSort(arr)
 

@@ -4,22 +4,18 @@ function insertionSort(arr){
 
         let numberToInsert = arr[i];
 
-        let j= i-1 ;
+        let j=i-1;
 
-        while(j >=0 && arr[j] > numberToInsert){
-
+        while(j >= 0 && arr[j] > numberToInsert){
             arr[j+1] = arr[j];
             j = j-1 ;
-
         }
-        arr[j+1] = numberToInsert ;
+        arr[j+1] = numberToInsert;
     }
 
     return arr ;
 }
 
-const arr = [-2 , -6 , 9 , 6 , 2]
+let arr = [-5 , 0 , -8 , 8 ,5]
 
-let res = insertionSort(arr)
-
-console.log(res);
+console.log(insertionSort(arr));
