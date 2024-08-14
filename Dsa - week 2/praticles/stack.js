@@ -1,5 +1,57 @@
-// stack things study later
+class Stack{
+    constructor(){
+        this.items = [] ;
+    }
 
-// need to study that
+    isEmpty(){
+        return this.items.length === 0 ;
+    }
 
-// for notes we need separate file i think 
+    size(){
+        return this.items.length ;
+    }
+
+    push(element){
+        this.items.push(element)
+    }
+
+    pop(){
+        if(this.isEmpty()){
+            return "The stack is Empty";
+        }else{
+            return this.items.pop()
+        }
+    }
+
+
+    peek(){
+        return this.items[this.size()-1]
+    }
+
+    print(){
+        console.log(this.items.toString());
+        
+    }
+}
+
+const stack = new Stack();
+
+console.log(stack.isEmpty());
+
+
+stack.push(10)
+stack.push(20)
+stack.push(30)
+stack.push(40)
+stack.push(50)
+
+console.log(stack.peek());
+
+console.log(stack.pop());
+
+stack.print()
+
+console.log(stack.size());
+
+
+
