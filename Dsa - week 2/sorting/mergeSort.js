@@ -1,9 +1,7 @@
 function mergeSort(arr){
     
-    if(arr.length < 2){
-        return arr ;
-    }
-    
+    if(arr.length < 2)
+        return arr 
     let mid = Math.floor(arr.length/2);
     
     let leftArr = arr.slice(0,mid);
@@ -12,30 +10,18 @@ function mergeSort(arr){
     return merge(mergeSort(leftArr) , mergeSort(rightArr)) ;
     
 }
-
-
 function merge(leftArr , rightArr){
     
     let sortedArr = [] ;
-    
     while(leftArr.length && rightArr.length){
-        
-        
         if(leftArr[0] < rightArr[0]){
             sortedArr.push(leftArr.shift());
         }else{
             sortedArr.push(rightArr.shift())
         }
     }
-    
     return [...sortedArr , ...leftArr , ...rightArr]
 }
 
-
-
-
-
 let arr = [0 , 10 , 8 , -6 , -4 , 9 ]
-
-
 console.log(mergeSort(arr))

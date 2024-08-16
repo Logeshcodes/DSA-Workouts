@@ -81,11 +81,7 @@ table.set("age" ,"22");
 table.set("mark" , "95");
 
 console.log(table.get('name'));
-
-
 table.remove("name")
-
-
 table.display();
 
 
