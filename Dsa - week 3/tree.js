@@ -58,11 +58,11 @@ class BinarySearchTree{
         }
     }
 
-    preOder(root){
+    preOrder(root){
         if(root){
             console.log(root.value);
-            this.preOder(root.left);
-            this.preOder(root.right);
+            this.preOrder(root.left);
+            this.preOrder(root.right);
             
         }
     }
@@ -116,6 +116,18 @@ class BinarySearchTree{
         }else
             return this.max(root.right)
     }
+
+    delete(value){
+        this.root = this.deleteNode(this.root , value)
+    }
+
+    deleteNode(root , value){
+        if(root === null){
+            return root ;
+        }else{
+            
+        }
+    }
 }
 
 
@@ -134,10 +146,11 @@ console.log(bst.search(bst.root ,5));
 console.log(bst.search(bst.root ,15));
 console.log(bst.search(bst.root ,21));
 
-// bst.postOrder(bst.root)
+bst.postOrder(bst.root);
 
 bst.levelOrder()
 
-console.log("min value : ",bst.min(bst.root))
-console.log("max value : ",bst.max(bst.root))
+console.log("min value : ",bst.min(bst.root));
+console.log("max value : ",bst.max(bst.root));
+
 
