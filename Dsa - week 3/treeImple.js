@@ -1,14 +1,14 @@
 class Node{
     constructor(value){
-        this.value = value ;
-        this.left = null;
+        this.left = null ;
         this.right = null ;
+        this.value = value ;
     }
 }
 
 class BinarySearchTree{
     constructor(){
-        this.root = null ;
+        this.root =  null ;
     }
     
     isEmpty(){
@@ -17,7 +17,6 @@ class BinarySearchTree{
     
     insert(value){
         let newNode = new Node(value)
-        
         if(this.isEmpty()){
             this.root = newNode ;
         }else{
@@ -26,11 +25,12 @@ class BinarySearchTree{
     }
     
     insertNode(root , newNode){
-        if(root.value > newNode.value){
-            if(root.left=== null){
+        
+        if(root.value > newNode.value ){
+            if(root.left === null){
                 root.left = newNode ;
             }else{
-                this.insertNode(root.left , newNode);
+                this.insertNode(root.left , newNode)
             }
         }else{
             if(root.right === null){
@@ -42,40 +42,38 @@ class BinarySearchTree{
     }
     
     
+    
     search(root , value ){
         if(!root){
             return false ;
         }else{
             if(root.value === value){
                 return true ;
-            }else{
-                if(root.value > value){
-                    return this.search(root.left , value)
-                }else{
-                    return this.search(root.right , value)
-                }
+            }else if(root.value > value){
+                return this.search(root.left , value )
+            }else if(root.value < value){
+                return this.search(root.right , value )
             }
         }
     }
     
     preOrder(root){
         if(root){
-            console.log(root.value);
-            this.preOrder(root.left);
-            this.preOrder(root.right);
+            console.log(root.value)
+            this.preOrder(root.left)
+            this.preOrder(root.right)
         }
     }
     
     inOrder(root){
         if(root){
             this.inOrder(root.left)
-            console.log(root.value);
+            console.log(root.value )
             this.inOrder(root.right)
         }
     }
     
-    
-    postOrder(root){
+    postValue(root){
         if(root){
             this.postOrder(root.left)
             this.postOrder(root.right)
@@ -83,48 +81,41 @@ class BinarySearchTree{
         }
     }
     
-    min(root){
-        if(!root.left){
-            return root.value ;
-        }else{
-            return this.min(root.left);
+    levelOrder(){
+        let queue = []
+        
+        queue.push(this.root)
+        
+        
+        while(queue.length){
+            let curr = queue.shift()
+            console.log(curr.value)
+            
+            if(curr.left){
+                queue.push(curr.left)
+            }
+            if(curr.right){
+                queue.push(curr.right)
+            }
         }
     }
     
+    min(root){
+        if(!root.left){
+            return root.value
+        }else{
+            return this.min(root.left)
+        }
+    }
     
     max(root){
         if(!root.right){
             return root.value ;
         }else{
-            return this.max(root.right);
-        }
-    }
-    
-    levelOrder(){
-        if(!this.root){
-            return null ;
-        }else{
-            
-            let queue = []
-            
-            queue.push(this.root);
-            
-            while(queue.length){
-                let curr = queue.shift();
-                console.log(curr.value);
-                if(curr.left){
-                    queue.push(curr.left);
-                }
-                if(curr.right){
-                    queue.push(curr.right);
-                }
-            }
-            
-            
+            return this.max(root.right)
         }
     }
 }
-
 
 
 
@@ -140,12 +131,10 @@ bst.insert(3)
 bst.insert(7)
 
 console.log(bst.search(bst.root , 10))
-console.log(bst.search(bst.root , 21))
 
+console.log("min value : ", bst.min(bst.root))
+console.log("max value : ", bst.max(bst.root))
 
-bst.postOrder(bst.root);
+// bst.preOrder(bst.root)
 
 bst.levelOrder()
-
-console.log("min value : ",bst.min(bst.root))
-console.log("max value : ",bst.max(bst.root))
