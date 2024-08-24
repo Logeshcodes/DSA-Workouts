@@ -45,7 +45,7 @@ class MaxHeap{
         [this.heap[index], this.heap[this.heap.length - 1]] = [this.heap[this.heap.length - 1], this.heap[index]];
         const removedValue = this.heap.pop();
 
-        // Heapify down from the index where the element was removed
+        
         this.heapifyDown(index);
 
         return removedValue;
