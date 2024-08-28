@@ -59,7 +59,7 @@ class BinarySearchTree{
         }
     }
 
-    // mistake method
+    // review time mistake
 
     closest(root , value ){
         if(root.value === value){
