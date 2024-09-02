@@ -17,4 +17,6 @@ let arr = [1,2,3] ;
 
 let result = subset(arr)
 
+// result command ;
+
 console.log(result)
