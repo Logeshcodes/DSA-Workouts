@@ -14,6 +14,9 @@ function binarySearch(arr , target){
     return recursiveBinarySearch(arr , target , 0 , arr.length-1 )
 }
 
+
+
+
 let arr = [1,2,3,4,5,6,7,8,9] ;
 let target = 8 ;
 
