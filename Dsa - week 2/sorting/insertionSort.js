@@ -16,6 +16,6 @@ function insertionSort(arr){
     return arr ;
 }
 
-let arr = [-5 , 0 , -8 , 8 ,5]
+let arr = [9,7,4, 8 ,5]
 
 console.log(insertionSort(arr));
