@@ -1,5 +1,7 @@
 function recursiveBinarySearch(arr , target , start , end ){
 
+    // pass  start and end dont be decalared inside ;
+
     if(start > end ) return -1 ;
 
     let mid = Math.floor((start+end)/2) ;
