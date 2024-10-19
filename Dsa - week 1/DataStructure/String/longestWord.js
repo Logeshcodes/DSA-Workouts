@@ -2,14 +2,14 @@ function longest(str){
 
     let arr = str.split(" ");
 
-    let long = 0;
+    let strLength = 0;
 
     let word = '' ;
 
     for(let i=0;i< arr.length ;i++){
-        if(arr[i].length > long){
+        if(arr[i].length > strLength){
 
-            long = arr[i].length;
+            strLength = arr[i].length;
             word = arr[i]
         }
     }
