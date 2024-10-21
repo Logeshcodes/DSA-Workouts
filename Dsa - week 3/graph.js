@@ -9,6 +9,8 @@ class Graph{
         }
     }
 
+    // Graph
+
     addEdge(vertex1 , vertex2){
 
         if(!this.adjacencyList[vertex1]){
