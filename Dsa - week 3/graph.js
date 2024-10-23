@@ -24,6 +24,8 @@ class Graph{
 
     }
 
+    // Graph Edge 
+
     hasEdge(vertex1 , vertex2){
         return (
             this.adjacencyList[vertex1].has(vertex2) &&
