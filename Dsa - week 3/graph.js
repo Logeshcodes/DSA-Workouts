@@ -54,7 +54,7 @@ class Graph{
 
         for(let i in this.adjacencyList){
             console.log(i , "=>" , [...this.adjacencyList[i]]);
-            // console.log(i , "=>" , Array.from(this.adjacencyList[i]));
+            // console.log(i , "=>" , Array.from(this.adjacencyList[i])); // do other way
             
         }
     }
