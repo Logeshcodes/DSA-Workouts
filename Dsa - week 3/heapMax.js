@@ -50,6 +50,8 @@ class MaxHeap{
 
         return removedValue;
     }
+
+    // heapDown
     
     heapifyDown(index){
     let largest = index
