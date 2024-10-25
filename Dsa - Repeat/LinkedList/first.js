@@ -70,7 +70,7 @@ class LinkedList{
 
     insert(index , value ){
 
-        let node = new Node(value) ;
+        
 
         if(index < 0 || index > this.size ) return 0 ;
 

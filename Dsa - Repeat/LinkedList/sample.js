@@ -125,19 +125,18 @@ class LinkedList {
         }
     }
 
-    midElement() {
-
-        let size = this.size;
-
-        let mid = Math.floor(size / 2);
-
-        let curr = this.head;
-
-        for (let i = 0; i < mid; i++) {
-            curr = curr.next;
+    midElement(){
+        
+        let slow = this.head ;
+        let fast = this.head ;
+        
+        while(fast!== null  && fast.next!==null ){
+            slow = slow.next;
+            fast = fast.next.next ;
         }
-
-        console.log(curr.value);
+        
+        return slow.value ;
+        
     }
 
     reverse() {
@@ -201,6 +200,18 @@ function arrayToLinkedList(arr) {
     }
     return linkedlist;
 
+}
+
+function isPalindrome(str){
+    
+    let list = new Linkedlist();
+    
+    for(let i=0 ;i< str.length ;i++){
+        list.prepend(str[i])
+    }
+    let res = list.print()
+    
+    return res === str ;
 }
 
 
