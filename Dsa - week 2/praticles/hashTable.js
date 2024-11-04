@@ -51,5 +51,7 @@ table.set("Education" , "BTech");
 console.log(table.get("name"))
 
 
+console.log(table.hash('a'))
+
 
 table.display()
