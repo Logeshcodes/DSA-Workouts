@@ -1,10 +1,6 @@
-class Stack {
+class Queue {
     constructor(){
         this.items = []
-    }
-
-    isEmpty(){
-        return this.items.length === 0 ;
     }
 
     size(){
@@ -28,16 +24,16 @@ class Stack {
     }
 }
 
-let stack =  new Stack 
 
-stack.enqueue(10)
-stack.enqueue(20)
-stack.enqueue(30)
-stack.enqueue(40)
-stack.enqueue(50)
+let queue = new Queue();
 
-stack.dequeue()
+queue.enqueue(10)
+queue.enqueue(20)
+queue.enqueue(30)
+queue.enqueue(40)
 
-console.log(stack.peek())
+queue.dequeue()
 
-stack.print()
+console.log(queue.peek())
+
+queue.print()
