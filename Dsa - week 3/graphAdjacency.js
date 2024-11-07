@@ -12,4 +12,8 @@ adjacencyList = {
     "C" : ["B"]
 }
 
-console.log(adjacencyList["B"]);
+// console.log(adjacencyList["C"]);
+
+for(let i in adjacencyList){
+    console.log(adjacencyList[i])
+}
