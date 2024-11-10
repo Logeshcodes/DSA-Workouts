@@ -94,7 +94,7 @@ class BinarySearchTree{
             return this.max(root.right)
         }
     }
-    
+    // bfs
     levelOrder(){
         
         let queue = []
