@@ -1,29 +1,40 @@
-class Queue {
+class Queue{
     constructor(){
         this.items = []
     }
-
+    
+    isEmpty(){
+        return this.items.length === 0 ;
+    }
+    
     size(){
         return this.items.length ;
     }
-
+    
     enqueue(value){
         this.items.push(value)
     }
-
-    dequeue(){
-        this.items.shift()
+    
+    dequeue(value){
+        this.items.pop()
     }
-
+    
+    display(){
+        return this.items.toString();
+    }
+    
     peek(){
         return this.items[0]
     }
-
-    print(){
-        console.log(this.items.toString())
+    
+    reverse(){
+        let arr = []
+        for(let i=this.items.length-1 ; i>= 0 ; i--){
+            arr.push(this.items[i])
+        }
+        return arr ;
     }
 }
-
 
 let queue = new Queue();
 
@@ -36,4 +47,11 @@ queue.dequeue()
 
 console.log(queue.peek())
 
-queue.print()
+console.log(queue.display())
+console.log(queue.reverse())
+
+
+
+
+
+
