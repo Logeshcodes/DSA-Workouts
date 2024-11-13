@@ -60,6 +60,8 @@ class Graph{
     }
 }
 
+// add bfs and dfs
+
 const graph = new Graph()
 
 graph.addVertex("A")
