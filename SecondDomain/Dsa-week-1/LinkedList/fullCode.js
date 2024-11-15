@@ -222,8 +222,9 @@ class LinkedList{
                    this.head = curr.next ;
                }else{
                    prev.next = curr.next ;
-                   this.size--
+                   
                }
+               this.size--
                
            }else{
                
@@ -235,7 +236,7 @@ class LinkedList{
        }
        
    }
-   
+
    
    
    // to Array
