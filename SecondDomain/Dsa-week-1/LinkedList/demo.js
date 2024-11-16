@@ -256,7 +256,7 @@ function arrayToLinkedList(arr){
 console.log('convert arrayToLinkedList : ',arrayToLinkedList(arr))
 
 
-// check the linkedList is an Palindrome 
+// check the linkedList is an Palindrome - refer full code
 
 
 let str = 'madam'  // => remove space in the display method 
