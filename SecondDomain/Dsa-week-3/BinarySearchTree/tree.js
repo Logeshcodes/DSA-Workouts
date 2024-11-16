@@ -117,7 +117,7 @@ class BinarySearchTree{
            } 
            else if (root.value > value) return this.search(root.left , value)
            else if (root.value < value){
-           return this.search(root.right , value)
+                return this.search(root.right , value)
            }
        }
    }
