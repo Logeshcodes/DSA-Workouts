@@ -236,7 +236,7 @@ class LinkedList{
             curr = curr.next ;
         }
         
-        curr = this.head // reassign 
+        curr = this.head // reassign once
         
         let prev = null ;
         
