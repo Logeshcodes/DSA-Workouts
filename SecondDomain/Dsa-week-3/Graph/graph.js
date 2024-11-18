@@ -21,7 +21,7 @@ class Graph{
         this.list[vertex1].delete(vertex2)
         this.list[vertex2].delete(vertex1)
     }
-    removeVeretx(vertex){
+    removeVertex(vertex){
         for(let neig of this.list[vertex]){
             this.removeEdge(vertex,neig)
         }
@@ -69,13 +69,15 @@ class Graph{
 
     }
 
+    
+
 }
 
 let graph=new Graph()
 graph.addEdge("A","B")
 graph.addEdge("A","C")
 graph.display()
-// graph.removeVeretx("A")
+// graph.removeVertex("A")
 // graph.display()
 graph.bfs("A")
 graph.dfs("A")
