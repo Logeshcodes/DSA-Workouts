@@ -41,7 +41,7 @@ class MaxHeap {
 
     heapSort() {
         const sortedArray = [];
-        while (this.heap.length > 0) {
+        while (this.heap.length) {
             sortedArray.push(this.extractMax());
         }
         return sortedArray.reverse();  // Reverse to get the sorted array in ascending order

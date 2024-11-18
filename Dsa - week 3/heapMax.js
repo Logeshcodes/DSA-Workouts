@@ -26,14 +26,16 @@ class MaxHeap{
         
         while(index > 0 && this.heap[parentIndex] < this.heap[index]){
             [ this.heap[index] , this.heap[parentIndex]] = [this.heap[parentIndex] ,  this.heap[index]]
+
+            index = parentIndex ;
+            parentIndex = this.getParentIndex(index)
         }
         
-        index = parentIndex ;
-        parentIndex = this.getParentIndex(index)
+        
     }
     
     
-    remove(value){
+    removeByValue(value){
         const index = this.heap.indexOf(value);
         if(this.heap.length === 0){
             return null;
@@ -43,12 +45,26 @@ class MaxHeap{
         }
         
         [this.heap[index], this.heap[this.heap.length - 1]] = [this.heap[this.heap.length - 1], this.heap[index]];
+
         const removedValue = this.heap.pop();
 
-        
         this.heapifyDown(index);
 
         return removedValue;
+    }
+
+    remove(){
+        if(this.heap.length === 0){
+            return null;
+        }
+        if(this.heap.length === 1){
+            return this.heap.pop();
+        }
+
+        let root = this.heap[0]
+        this.heap[0] = this.heap.pop();
+        this.heapifyDown(0)
+        return root;
     }
 
     // heapDown
@@ -62,7 +78,7 @@ class MaxHeap{
         largest = leftChildIndex
     }
 
-    if(rightChildIndex < this.heap.length && this.heap[rightChildIndex] > this.heap[largest]){
+    if(rightChildIndex < this.heap.length && this.heap[rightChildIndex] >  this.heap[largest]){
         largest = rightChildIndex
     }
 
