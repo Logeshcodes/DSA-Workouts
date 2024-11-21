@@ -162,7 +162,7 @@ bst.insert(7);
 bst.insert(12);
 bst.insert(2);
 
-// bst.preOrder(bst.root)
+bst.preOrder(bst.root)
 
 bst.inOrder(bst.root)
 // bst.postOrder(bst.root)
