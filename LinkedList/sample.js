@@ -1,188 +1,245 @@
 class Node{
     constructor(value){
-        this.value = value ;
         this.next = null ;
+        this.value = value
     }
 }
+
 
 class LinkedList{
     constructor(){
         this.head = null ;
         this.size = 0 ;
     }
-    
-    
+
     isEmpty(){
-        return this.size === 0 ;
+        return this.head === null ;
     }
-    
+
     prepend(value){
-        let node = new Node(value) ;
-        
+
+        let node = new Node(value);
+
         if(this.isEmpty()){
-            this.head = node 
+            this.head = node ;
         }else{
+
             node.next = this.head ;
             this.head = node ;
         }
+
         this.size++ ;
-        
     }
-    
+
+
     append(value){
-        
+
         let node = new Node(value);
-        
+
         if(this.isEmpty()){
             this.head = node ;
         }else{
-            
+
             let curr = this.head ;
-            
+
             while(curr.next){
                 curr = curr.next ;
             }
-            
+
             curr.next = node ;
         }
-        
+
         this.size++ ;
     }
-    
+
     insert(value , index){
-        
-        if(index < 0 || index > this.size ) return null ;
-        
-        if(index === 0 ){
+
+        if(index < 0 || index > this.size) return ;
+
+        if(index === 0){
             this.prepend(value)
         }else if(index === this.size){
             this.append(value)
         }else{
-             
-             let node = new Node(value);
-             let curr = this.head 
-             
-             for(let i=0;i< index-1 ; i++){
-                 curr = curr.next ;
-             }
-             
-             node.next = curr.next ;
-             curr.next = node ;
-             
-             this.size++ ;
+
+            let node = new Node(value)
+
+            let curr = this.head ;
+            
+
+            for(let i=0;i< index-1 ; i++){
+                
+                curr = curr.next ;
+            }
+
+            node.next = curr.next ;
+            curr.next = node ;
+
+            this.size++ ;
         }
     }
-    
-    
+
+
+    removeIndex(index) {
+
+        if(index < 0 || index > this.size) return ;
+
+        else if(index === 0){
+            this.head = this.head.next ;
+            this.size-- ;
+        }else{
+
+
+
+            let curr = this.head ;
+            let prev = null ;
+
+            for(let i=0;i< index ; i++){
+                prev = curr ;
+                curr = curr.next ;
+            }
+
+            if(curr){
+                if(!curr.next){
+                    prev.next = null ;
+                }else{
+                    prev.next = curr.next ;
+                }
+
+                this.size-- ;
+
+            }
+        }
+    }
+
+    removeValue(value){
+
+        if(this.head.value === value){
+            this.head = this.head.next ;
+            this.size-- ;
+        }else{
+
+            let curr = this.head ;
+            let prev = null ;
+
+            while(curr && curr.value!== value){
+                prev = curr ;
+                curr = curr.next ;
+            }
+
+            if(curr){
+                if(!curr.next){
+                    prev.next = null ;
+                }else{
+                    prev.next = curr.next ;
+                }
+
+                this.size-- ;
+            }
+        }
+    }
+
+
     display(){
-        
+
         let curr = this.head ;
-        
-        let listValues = ''
-        
+
+        let listValues = '' ;
+
+
         while(curr){
-            
-            listValues += `${curr.value} `
+            listValues += `${curr.value} ` ;
             curr = curr.next ;
         }
+
         return listValues ;
     }
-    
-    
-    midElement(){
-        let slow = this.head  ;
-        let fast = this.head  ;
-        
-        while(fast !== null  && fast.next !== null){
-            slow = slow.next ;
-            fast = fast.next.next ;
-        }
-        
-        return slow.value ;
-    }
-    
-    removeByValue(value){
-        
-        if(this.head.value === value){
-            this.head  = this.head.next();
-            this.size-- ;
-        }
-        
-        let curr = this.head  ;
-        let prev = null ;
-        
-        while(curr && curr.value!== value){
-            prev = curr ;
-            curr = curr.next ;
-        }
-        
-        if(curr){
-            prev.next = curr.next;
-            this.size-- ;
-        }
-        
-        return curr.value ;
-    }
-    
-    
-    removeByIndex(index){
-        
-        if(index < 0 || index > this.size ) return null ;
-        
-        if(index === 0){
-            this.head  = this.head.next;
-            this.size-- ;
-        }
-        
-        let curr = this.head  ;
-        let prev = null ;
-        
-        for(let i=0 ; i< index ;i++){
-            prev = curr ;
-            curr = curr.next ;
-        }
-        
-        if(curr){
-            prev.next = curr.next ;
-            this.size-- ;
-        }
-        
-        return curr.value ;
-    }
-    
-    reverse(){
-        let curr = this.head  ;
-        let prev = null ;
-        
+
+
+
+    findDuplicates(){
+
+        let set = new Set();
+        let arr = [] ;
+
+        let curr = this.head ;
+
         while(curr){
-            let next = curr.next ;
-            
-            curr.next = prev ;
-            prev = curr ;
-            curr = next ;
+
+            if(set.has(curr.value)){
+                arr.push(curr.value)
+            }else{
+                set.add(curr.value)
+            }
+            curr = curr.next ;
         }
-        this.head = prev ;
+
+
+        for(let i=0;i< arr.length ; i++){
+            this.removeValue(arr[i])
+        }
     }
-    
+
+
+    removeDuplicates(){
+
+        let set = new Set();
+        let duplicates = new Set();
+
+        let curr = this.head ;
+
+        while(curr){
+
+            if(set.has(curr.value)){
+                duplicates.add(curr.value)
+            }else{
+                set.add(curr.value)
+            }
+            curr = curr.next ;
+        }
+
+        curr = this.head ;
+        let prev = null ;
+
+        while(curr){
+
+            if(duplicates.has(curr.value)){
+
+                if(prev === null){
+                    this.head = this.head.next ;
+                }else{
+
+                    prev.next = curr.next ;
+                }
+
+                this.size-- ;
+
+            }else{
+                prev = curr ;
+            }
+
+
+            curr = curr.next ;
+        }
+    }
+
+
     toArray(){
-        
+
         let arr = [];
-        
-        let curr = this.head 
-        
+
+        let curr = this.head ;
+
         while(curr){
-            arr.push(curr.value);
+            arr.push(curr.value)
             curr = curr.next ;
         }
-        
-        return arr;
+
+        return arr ;
     }
-    
-    
 }
 
-
-let list = new LinkedList();
+let list =  new LinkedList();
 
 list.prepend(30)
 list.prepend(20)
@@ -195,52 +252,37 @@ list.insert(5 , 0)
 list.insert(55 , 6)
 list.insert(25 , 3)
 
-// list.removeByValue(20)
-console.log('Removed index value : ' , list.removeByIndex(2))
+
+list.removeIndex(7)
+list.removeValue(50)
+
+
+list.append(50)
+list.append(50)
+list.append(50)
+
+list.removeDuplicates()
+
 
 console.log(list.display())
 
-console.log('MidElement : ' , list.midElement())
-
-list.reverse()
-console.log(list.display())
 console.log(list.toArray())
 
 
+
 function isPalindrome(str){
-    
-    let list = new LinkedList();
-    
-    for(let i=0;i< str.length ;i++ ){
+
+    let list = new LinkedList ;
+
+    for(let i=0;i<str.length ; i++){
         list.prepend(str[i])
     }
-    
-    let res = list.display() // remove space in display method
-    
-    return res === str ;
+
+    let res = list.display()
+
+    return str === res ;
 }
 
-
-let str = 'madam';
+let str = 'madam'
 
 console.log(isPalindrome(str))
-
-
-
-
-
-let arr = [1,2,3,4,5]
-
-
-function linkedListToArr(arr){
-    
-    let list = new LinkedList()
-    
-    for(let i=0 ;i< arr.length ; i++){
-        list.append(arr[i])
-    }
-    
-    return list.display() ;
-}
-
-console.log(linkedListToArr(arr))
