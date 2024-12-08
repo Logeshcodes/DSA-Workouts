@@ -1,87 +1,96 @@
-class MaxHeap {
-    constructor() {
-        this.heap = [];
+class HeapSort{
+    constructor(){
+        this.heap = []
     }
 
-    getParentIndex(index) {
-        return Math.floor((index - 1) / 2);
+
+    getParentIndex(index){
+        return Math.floor((index-1)/2)
     }
 
-    swap(index1, index2) {
-        [this.heap[index1], this.heap[index2]] = [this.heap[index2], this.heap[index1]];
+    swap(index1 , index2){
+        [ this.heap[index1] ,  this.heap[index2]] = [ this.heap[index2] ,  this.heap[index1]]
     }
 
-    insert(value) {
+
+    insert(value){
+
         this.heap.push(value);
-        this.heapifyUp();
+        this.heapifyUp()
     }
 
-    heapifyUp() {
-        let index = this.heap.length - 1;
+    heapifyUp(){
 
-        while (index > 0 && this.heap[this.getParentIndex(index)] < this.heap[index]) {
-            this.swap(index, this.getParentIndex(index));
-            index = this.getParentIndex(index);
+        let index =  this.heap.length-1 ;
+
+        while(index > 0 &&  this.heap[this.getParentIndex(index)] <  this.heap[index]){
+            this.swap(index , this.getParentIndex(index))
+            index = this.getParentIndex(index)
         }
     }
 
-    remove() {
-        if (this.heap.length === 0) return null;
-        if (this.heap.length === 1) return this.heap.pop();
+    remove(){
 
-        const root = this.heap[0];
-        this.heap[0] = this.heap.pop();
-        this.heapifyDown(0);
-        return root;
+        if( this.heap.length===0 ) return null ;
+        if( this.heap.length===1 ) return this.heap.pop()
+
+        let root = this.heap[0]
+
+        this.heap[0] =  this.heap.pop()
+
+        this.heapifyDown()
+        return root ;
     }
 
-    heapifyDown(index) {
-        let largest = index;
+    heapifyDown(){
 
-        let leftChildIndex = 2 * index + 1;
-        let rightChildIndex = 2 * index + 2;
+        let index = 0 ;
+        let largest = index ;
 
-        if (leftChildIndex < this.heap.length && this.heap[leftChildIndex] > this.heap[largest]) {
-            largest = leftChildIndex;
+        let leftChildIndex = 2 * index + 1
+        let rightChildIndex = 2 * index + 2
+
+        if(leftChildIndex <  this.heap.length &&  this.heap[leftChildIndex] >  this.heap[largest]){
+            largest = leftChildIndex
         }
-        if (rightChildIndex < this.heap.length && this.heap[rightChildIndex] > this.heap[largest]) {
-            largest = rightChildIndex;
+        if(rightChildIndex <  this.heap.length &&  this.heap[rightChildIndex] >  this.heap[largest]){
+            largest = rightChildIndex
         }
 
-        if (largest !== index) {
-            this.swap(largest, index);
-            this.heapifyDown(largest);
+        if(largest !== index){
+            this.swap(largest , index)
+            this.heapifyDown(largest)
         }
     }
 
-    display() {
-        console.log(this.heap);
-    }
+    heapSort(){
 
-    
-    heapSort() {
-        const sortedArray = [];
-        const tempHeap = [...this.heap]; 
+        let sortedArr = []
 
-        while (this.heap.length > 0) {
-            sortedArray.push(this.remove());
+        while(this.heap.length > 0){
+
+            sortedArr.push(this.remove())
         }
 
-        this.heap = tempHeap; 
-        return sortedArray.reverse(); 
+        return sortedArr.reverse()
+    }
+
+    display(){
+        console.log( this.heap)
     }
 }
 
-let maxHeap = new MaxHeap();
+let sort = new HeapSort()
 
-maxHeap.insert(100);
-maxHeap.insert(1);
-maxHeap.insert(10);
-maxHeap.insert(104);
-maxHeap.insert(114);
-
-console.log("Heap:");
-maxHeap.display();
-
-console.log("Sorted Array:");
-console.log(maxHeap.heapSort());
+sort.insert(10)
+sort.insert(100)
+sort.insert(104)
+sort.insert(101)
+sort.insert(1019)
+console.log("Noraml heap : ")
+sort.display()
+sort.remove()
+console.log("Removed : ")
+sort.display()
+console.log("HeapSort : ")
+console.log(sort.heapSort())
