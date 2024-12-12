@@ -188,7 +188,7 @@ console.log('--------')
 console.log('Max : ', bst.max(bst.root))
 console.log('Min : ', bst.min(bst.root))
 
-let node = bst.findNode(15 , bst.root)
+let node = bst.findNode(10 , bst.root)
 
 console.log('Degree : ', bst.findDegree(node))
 console.log('Height : ', bst.findHeight(node))
