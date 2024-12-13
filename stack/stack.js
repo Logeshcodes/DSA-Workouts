@@ -21,7 +21,7 @@ class Stack{
     }
     
     display(){
-        return this.items.toString()
+        return this.items.join(' ') // also use join() => instead of toString()
     }
     
     reverse(){
