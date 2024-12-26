@@ -319,9 +319,6 @@ list.insert(55 , 9)
 
 console.log(list.midElement())
 
-
-// console.log(list.display())
-// list.reverse()
 console.log(list.display())
 
 
