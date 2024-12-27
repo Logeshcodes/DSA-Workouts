@@ -3,6 +3,7 @@ class HeapSort{
         this.heap = []
     }
 
+    // asked in full domain
 
     getParentIndex(index){
         return Math.floor((index-1)/2)
