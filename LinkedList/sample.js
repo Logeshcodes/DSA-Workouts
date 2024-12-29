@@ -263,6 +263,8 @@ list.append(50)
 
 list.removeDuplicates()
 
+console.log('/n')
+
 
 console.log(list.display())
 
