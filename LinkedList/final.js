@@ -314,8 +314,6 @@ list.insert(55 , 7)
 list.insert(55 , 8)
 list.insert(55 , 9)
 
-// list.removeByIndex(30)
-// list.removeByIndex(2)
 
 console.log(list.midElement())
 
@@ -323,7 +321,7 @@ console.log(list.display())
 
 
 
-console.log(list.toArray())
+// console.log(list.toArray())
 
 console.log(isPalindrome(str))
 console.log(arrToLinkedList(arr))
