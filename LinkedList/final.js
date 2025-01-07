@@ -266,8 +266,6 @@ class LinkedList{
 }
 
 
-// functions
-
 let str = 'madam'
 
 function isPalindrome(str){
