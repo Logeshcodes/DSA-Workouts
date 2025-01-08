@@ -319,7 +319,7 @@ console.log(list.display())
 
 
 
-// console.log(list.toArray())
+console.log(list.toArray())
 
 console.log(isPalindrome(str))
 console.log(arrToLinkedList(arr))
