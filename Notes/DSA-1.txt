@@ -1,4 +1,4 @@
-Data Structure : 
+Data Structure : Theory
 
             Way of organizing and store a data so that it can be accessed and modified efficiently .
 
@@ -46,7 +46,6 @@ Memory Allocation :
             Memory Management :
 
                    Js engine use garbage collector for manage memory .if there is an unreferenced elements here in a code that would be deallocated by garbage collector .
-
 
 Memory Leak : 
 
