@@ -1,6 +1,6 @@
 Data Structure : Theory
 
-            Way of organizing and store a data so that it can be accessed and modified efficiently .
+          =>  Way of organizing and store a data so that it can be accessed and modified efficiently .
 
 
                               Types of Data Structure : 
@@ -11,7 +11,7 @@ Data Structure : Theory
 
 Algorithms : 
 
-            Set of well-defined instructions to slove the particular problem effectively and efficiently .
+          =>  Set of well-defined instructions to slove the particular problem effectively and efficiently .
 
                               Algorithm analysis : 
                   
@@ -21,7 +21,7 @@ Algorithms :
 
 Asymptotic Notation : 
 
-            Mathematical tools for represents the time and space complexity .
+          =>  Mathematical tools for represents the time and space complexity .
 
                               1 ) Big- O notation  (O) :  worst-case complexity 
                               2 ) Omega notation ( )   : Best-case complexity 
@@ -36,7 +36,7 @@ Asymptotic Notation :
 
 Memory Allocation : 
 
-            It a process of reserving a memory space for a variable, object or function in program .
+          =>  It a process of reserving a memory space for a variable, object or function in program .
 
             key concept : 
                    
@@ -49,7 +49,7 @@ Memory Allocation :
 
 Memory Leak : 
 
-            A memory leak occurs when the program doesn't release a memory , that is no longer needed .
+          =>  A memory leak occurs when the program doesn't release a memory , that is no longer needed .
 
             I would causing the program to consume more and more memory over time .
 
