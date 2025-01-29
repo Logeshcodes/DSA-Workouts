@@ -9,5 +9,3 @@ function isPalindrome(str){
 }
 
 console.log(isPalindrome('madam'))
-
-// commented
