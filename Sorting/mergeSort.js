@@ -1,4 +1,6 @@
 function mergeSort(arr){
+
+    // merge sort
     
     if(arr.length < 2) return arr ;
     
@@ -10,7 +12,7 @@ function mergeSort(arr){
    
     
     return merge(mergeSort(leftArr) , mergeSort(rightArr)) ;
-    // added
+    
     
 }
 
