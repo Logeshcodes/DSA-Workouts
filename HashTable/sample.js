@@ -1,40 +1,41 @@
 class HashTable{
     constructor(size){
-        this.table = new Array(size)
-        this.size = size ; 
+        this.table = new Array(size) ;
+        this.size = size ;
     }
 
-
     hash(key){
+
         let total = 0 ;
 
-        for(let i=0 ; i< key.length ; i++){
-            total += key.charCodeAt(i)
+        for(let i=0;i< key.length ; i++){
+            total += key.charCodeAt(i);
         }
 
         return total % this.size ;
     }
 
+    set(key , value ){
 
-    set(key , value){
+        let index = this.hash(key) ;
 
-        let index= this.hash(key) ;
-
-        let bucket = this.table[index] ;
+        let bucket = this.table[index] ;  // collision handling using separate chaining
 
         if(!bucket){
-            this.table[index] = [ [key , value]]
+            this.table[index] = [[key , value]] ;
         }else{
 
-            let sameKeyIndex = bucket.find(item => item[0]===key) ;
+            let sameKeyItem = bucket.find( item => item[0] === key) ;
 
-            if(sameKeyIndex){
-                sameKeyIndex[1] = value ;
+            if(sameKeyItem){
+                sameKeyItem[1] = value ;
             }else{
                 bucket.push([key , value])
             }
         }
+
     }
+
 
     get(key){
 
@@ -44,31 +45,10 @@ class HashTable{
 
         if(bucket){
 
-            let sameKeyIndex = bucket.find(item => item[0]===key) ;
+            let sameKeyItem = bucket.find( item => item[0] === key) ;
 
-            if(sameKeyIndex){
-                return sameKeyIndex[1]
-            }
-        }
-
-    }
-
-
-
-    remove(key){
-
-        let index = this.hash(key) ;
-
-
-        let bucket = this.table[index] ;
-
-
-        if(bucket){
-
-            let sameKeyIndex = bucket.find(item => item[0]=== key);
-
-            if(sameKeyIndex){
-                bucket.splice(bucket.indexOf(sameKeyIndex) , 1)
+            if(sameKeyItem){
+                return sameKeyItem[1];
             }
         }
     }
@@ -77,23 +57,40 @@ class HashTable{
     display(){
 
         for(let i=0;i< this.table.length ; i++){
-
             if(this.table[i]){
-                console.log(i , this.table[i])
+                console.log( i , this.table[i])
+            }
+        }
+    }
+
+    remove(key){
+
+        let index = this.hash(key) ;
+
+        let bucket = this.table[index] ;
+
+        if(bucket){
+            let sameKeyItem = bucket.find( item => item[0]=== key);
+
+            if(sameKeyItem){
+                bucket.splice( bucket.indexOf(sameKeyItem) , 1);
             }
         }
     }
 }
 
 
-let table = new HashTable(50);
+
+let hash = new HashTable(50);
 
 
-table.set('name' , 'Logesh')
-table.set('mane' , 'Logu')
-table.set('age' , 23)
+hash.set( 'name' , "Logesh");
+hash.set( 'mane' , "Logu");
+hash.set( 'age' , 23) ;
+hash.set('degree' , 'BTech');
 
-table.get('name');
-table.remove('mane');
+console.log(hash.get('age'));
 
-table.display()
+hash.remove('degree')
+
+hash.display()
