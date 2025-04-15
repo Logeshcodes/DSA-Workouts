@@ -1,8 +1,8 @@
 function reverseStr(str){
-    
+
     let res = str.split(' ')
-    .map( val => val.split('').reverse().join('')).reverse().join(' ')
-    
+    .map( item => item.split('').reverse().join('')).join(' ')
+
     return res ;
 }
 

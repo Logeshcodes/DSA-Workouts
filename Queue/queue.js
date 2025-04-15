@@ -12,7 +12,7 @@ class Queue{
         this.items.push(value);
     }
     
-    dequeue(value){
+    dequeue(){
         this.items.shift()
     }
     
