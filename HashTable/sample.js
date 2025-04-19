@@ -24,7 +24,15 @@ class HashTable{
             this.table[index] = [ [key , value]]
         }else{
 
-            bucket.push( [key , value]);                       // set differ
+            let sameKeyItem = bucket.find( item => item[0] === key)
+
+            if(sameKeyItem){
+                sameKeyItem[1] = value
+            }else{
+                bucket.push( [key , value]);
+            }
+
+                                   
         }
     }
 
@@ -83,35 +91,41 @@ class HashTable{
     }
 
 
-    findDuplicates(){
-        for (let i = 0; i < this.table.length; i++) {
+    findDupicates(){
+        
+        for(let i=0;i< this.table.length ; i++){
+            let duplicates = [];
+            let set = new Set();
+            
             let bucket = this.table[i];
-            if (bucket && bucket.length > 1) {
-                let seen = new Set();
-                let duplicates = [];
-                for (let [key, _] of bucket) {
-                    if (seen.has(key)) {
-                        duplicates.push(key);
-                    } else {
-                        seen.add(key);
+            
+            if(bucket){
+                
+                for(let [ _ , value] of bucket){
+                    
+                    if( set.has(value)){
+                        duplicates.push(value)
+                    }else{
+                        set.add(value)
                     }
                 }
-                if (duplicates.length > 0) {
-                    console.log(`Bucket ${i} has duplicate keys:`, duplicates);
-                }
             }
-        }}
+            
+            if( duplicates.length > 0){
+                console.log(`Bucket ${i} has duplicate Value:`, duplicates);
+            }
+        }
+    }
 }
 
 
 let hash = new HashTable(50);
 
 hash.set( 'name' , "Logesh");
-hash.set( 'age' , 23);
 hash.set( 'age' , 25);
 hash.set( 'degree' , "BTech");
-hash.set( 'mane' , "Logu");
+hash.set( 'mane' , "Logesh");
 
 hash.print()
 hash.findOccurrences()
-hash.findDuplicates()
+hash.findDupicates()

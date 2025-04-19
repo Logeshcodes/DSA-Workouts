@@ -1,6 +1,6 @@
 class Node{
     constructor(value){
-        this.value = value;
+        this.value = value ;
         this.next = null ;
     }
 }
@@ -12,9 +12,10 @@ class LinkedList{
     }
 
     isEmpty(){
-        return this.size === 0;
+
+        return this.size === 0 ;
     }
-    
+
     push(value){
 
         let node = new Node(value);
@@ -22,6 +23,7 @@ class LinkedList{
         if(this.isEmpty()){
             this.head = node ;
         }else{
+
             node.next = this.head ;
             this.head = node ;
         }
@@ -29,13 +31,12 @@ class LinkedList{
     }
 
     pop(){
-
         if(this.isEmpty()){
             return null ;
         }else{
             this.head = this.head.next ;
+            this.size-- ;
         }
-        this.size--;
     }
 
     peek(){
@@ -49,24 +50,25 @@ class LinkedList{
         let listValues = '';
 
         while(curr){
-            listValues+= `${curr.value} `
+            listValues+= `${curr.value} `;
             curr = curr.next ;
         }
 
-        return listValues;
+        return listValues ;
     }
 }
 
-let list = new LinkedList();
 
-list.push(50);
-list.push(40);
-list.push(30);
-list.push(20);
-list.push(10);
 
-list.pop()
+let stack = new LinkedList();
 
-console.log(list.peek())
+stack.push(10)
+stack.push(20)
+stack.push(30)
+stack.push(40)
+stack.push(50)
 
-console.log(list.print())
+stack.pop()
+
+console.log(stack.peek())
+console.log(stack.print())
